@@ -42,7 +42,9 @@ echo ""
 #if [ -n "$size_partial" ]; then
 #	echo "Partial snap package size before clean = $size_partial"
 #fi
-#sudo /home/dondre/script/cleansnap.sh
+
+# put stuff that will clean snap packages here 
+
 #size=$(sudo du -sh /var/lib/snapd/snaps /var/lib/snapd/snaps/partial)
 #size_snaps=$(echo "$size" | grep "/var/lib/snapd/snaps$" | awk '{print $1}')
 #size_partial=$(echo "$size" | grep "/var/lib/snapd/snaps/partial$" | awk '{print $1}')
