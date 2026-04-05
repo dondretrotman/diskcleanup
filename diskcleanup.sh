@@ -34,6 +34,7 @@ echo ""
 
 # Uncomment this section if running Ubuntu with snap
 # Step 4: Run cleansnap script
+# MAKE SURE ALL SNAPS ARE CLOSED BEFORE RUNNING
 #echo "Running script to clean snap packages..."
 #size=$(sudo du -sh /var/lib/snapd/snaps /var/lib/snapd/snaps/partial)
 #size_snaps=$(echo "$size" | grep "/var/lib/snapd/snaps$" | awk '{print $1}')
@@ -43,7 +44,11 @@ echo ""
 #	echo "Partial snap package size before clean = $size_partial"
 #fi
 
-# put stuff that will clean snap packages here 
+#set -eu
+#snap list --all | awk '/disabled/{print $1, $3}' |
+#    while read snapname revision; do
+#        snap remove "$snapname" --revision="$revision"
+#    done
 
 #size=$(sudo du -sh /var/lib/snapd/snaps /var/lib/snapd/snaps/partial)
 #size_snaps=$(echo "$size" | grep "/var/lib/snapd/snaps$" | awk '{print $1}')
