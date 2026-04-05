@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to clean up the system
-
+set -eu
 echo "Script started at $(date)"
 # Show current free space
 echo "-------------------------------------------------------------"
@@ -44,7 +44,6 @@ echo ""
 #	echo "Partial snap package size before clean = $size_partial"
 #fi
 
-#set -eu
 #snap list --all | awk '/disabled/{print $1, $3}' |
 #    while read snapname revision; do
 #        snap remove "$snapname" --revision="$revision"
